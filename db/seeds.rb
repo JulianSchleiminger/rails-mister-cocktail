@@ -1,6 +1,8 @@
 require 'open-uri'
 require 'json'
 Ingredient.destroy_all
+Dose.destroy_all
+Cocktail.destroy_all
 
 data = open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read
 parsed = JSON.parse(data)
@@ -10,3 +12,9 @@ parsed['drinks'].each do |ingr|
   Ingredient.create(name: ingr['strIngredient1'])
 end
 puts "Finished creating Ingredients"
+
+
+
+
+
+Cocktail.create(name: "ABCADED")
