@@ -1,0 +1,30 @@
+.card {
+  height: 250px;
+  padding: 20px;
+  background-color: WhiteSmoke;
+  margin-top: 20px;
+  position: relative;
+}
+
+.cocktail-name {
+  position: absolute;
+  height: 80px;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  top: 50%;
+  margin-top: -20px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.delete-button {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}

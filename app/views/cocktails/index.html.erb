@@ -1,15 +1,18 @@
 <div class="container">
   <h1>Cocktails(<%= @cocktails.count %>)</h1>
+  <%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-primary" %>
 
   <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <div class="card">
-        <% @cocktails.each do |cocktail| %>
-          <p><%= link_to cocktail.name, cocktail_path(cocktail) %>  <%= link_to "[ DELETE ]", cocktail_path(cocktail), method: :delete %></p>
-        <% end %>
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-md-4">
+        <div class="card">
+          <p class="cocktail-name"><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          <%= link_to "[ DELETE ]", cocktail_path(cocktail), method: :delete, class: "btn btn-danger delete-button" %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
+  <div class="spacer">
 
-  <%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  </div>
 </div>
