@@ -1,6 +1,8 @@
 <div class="container">
-  <h1>Cocktails(<%= @cocktails.count %>)</h1>
-  <%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  <div class="header">
+    <h1>Cocktails(<%= @cocktails.count %>)</h1>
+    <%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-primary add-cock" %>
+  </div>
 
   <div class="row">
     <% @cocktails.each do |cocktail| %>
