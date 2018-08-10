@@ -5,7 +5,10 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-md-4">
-        <div class="card">
+        <% url = cocktail.photo.blank? ? image_path('http://via.placeholder.com/250x350', height: 250, width: 350) : cl_image_path(cocktail.photo, height: 250, width: 350, crop: :fill)
+        %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url %>');">
+
           <p class="cocktail-name"><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
           <%= link_to "[ DELETE ]", cocktail_path(cocktail), method: :delete, class: "btn btn-danger delete-button" %>
         </div>

@@ -1,4 +1,6 @@
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name, label: 'Cocktails Name' %>
+  <%= f.input :photo, label: 'Photo for Cocktail' %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit, label: 'Create new cocktail', class: 'btn btn-primary' %>
 <% end %>
