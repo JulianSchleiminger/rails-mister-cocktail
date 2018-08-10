@@ -32,14 +32,11 @@ ActiveRecord::Schema.define(version: 2018_08_09_090826) do
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.bigint "cocktail_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cocktail_id"], name: "index_ingredients_on_cocktail_id"
   end
 
   add_foreign_key "doses", "cocktails"
   add_foreign_key "doses", "ingredients"
-  add_foreign_key "ingredients", "cocktails"
 end
